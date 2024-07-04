@@ -291,11 +291,26 @@ python test.py
 
 ### 3. Configure MinkowskiEngine
 ~~~shell
-cd PointNet
-python setup.py install
+# Enter the MinkowskiEngine official website, navigate to the section for installing CUDA 11.X using Anaconda
+https://github.com/NVIDIA/MinkowskiEngine
 
-cd pointnet2_batch
-python setup.py install
+conda create -n py3-mink python=3.8  # Skipped as we have already created it
+conda activate py3-mink       # Here we activate our created environment 'conda activate grasp'
+
+conda install openblas-devel -c anaconda  # Installing necessary packages
+conda install pytorch=1.9.0 torchvision cudatoolkit=11.1 -c pytorch -c nvidia  # Not executed as already installed
+# We have installed pytorch: conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
+
+# Install MinkowskiEngine
+
+# Uncomment the following line to specify the cuda home. Make sure `$CUDA_HOME/nvcc --version` is 11.X
+# export CUDA_HOME=/usr/local/cuda-11.1   This is already configured in the environment variables, our CUDA version is 11.7
+pip install -U git+https://github.com/NVIDIA/MinkowskiEngine -v --no-deps --install-option="--blas_include_dirs=${CONDA_PREFIX}/include" --install-option="--blas=openblas"  # This online method encountered numerous errors, resolution unknown; opting for the local method below
+
+# Or if you want local MinkowskiEngine  # Installing locally using this method
+git clone https://github.com/NVIDIA/MinkowskiEngine.git
+cd MinkowskiEngine
+python setup.py install --blas_include_dirs=${CONDA_PREFIX}/include --blas=openblas
 ~~~
 
 ### 4. Configure graspnetAPI (graspnetAPI is a tutorial document for data processing, pose visualization, and other functions of the GraspNet-1Billion dataset.)
@@ -335,15 +350,17 @@ Start the franka robot arm correctly, activate the FCI and run franka_control：
 ~~~shell
 roslaunch panda_moveit_config franka_control.launch robot_ip:=172.16.3.69
 ~~~
+
 ![Franka Control](https://github.com/upc-ghy/GraspBalance/raw/main/franka_control.png)
 
 
 7. RealSense D435i (Install Intel RealSense Viewwe, and librealsense https://github.com/IntelRealSense/librealsense)
 
 8. hand-eye calibration (Find the relationship between the camera coordinate system and the Franka robot coordinate system)
+   
 ![Franka Control](https://github.com/upc-ghy/GraspBalance/raw/main/hand-eye_calibration.png)
 
-9. Write Franka and RealSense control code (The algorithm predicts the grasping position in the camera coordinate system, converts it to a position in the Franka robot coordinate system, and controls the robot to move to that position for object grasping and placing into the storage box.)
+10. Write Franka and RealSense control code (The algorithm predicts the grasping position in the camera coordinate system, converts it to a position in the Franka robot coordinate system, and controls the robot to move to that position for object grasping and placing into the storage box.)
 
 
 # Contact information of some authors:
