@@ -1,6 +1,6 @@
 
 # GraspFast
-### GraspFast: Multi-stage Lightweight 6-DoF Grasp Pose Fast Detection for Robot General Grasping in Cluttered Scenes
+### GraspFast: Multi-stage Lightweight 6-DoF Grasp Pose Fast Detection with RGB-D Image
 
 
 ![GraspFast](https://github.com/upc-ghy/GraspFast/assets/133858812/cc4ba68f-70b2-474b-b29e-30f9fb565988)
