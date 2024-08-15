@@ -1,7 +1,3 @@
-""" Tools for data processing.
-    Author: chenxi-wang
-"""
-
 import numpy as np
 
 
