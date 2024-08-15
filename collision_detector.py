@@ -1,7 +1,3 @@
-""" Collision detection to remove collided grasp pose predictions.
-Author: chenxi-wang
-"""
-
 import os
 import sys
 import numpy as np
