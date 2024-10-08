@@ -8,8 +8,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 sys.path.append(ROOT_DIR)
 
-import pointnet2.pytorch_utils as pt_utils
-from pointnet2.pointnet2_utils import CylinderQueryAndGroup
+import PointNetTool.pytorch_utils as pt_utils
+from PointNetTool.pointnet2_utils import CylinderQueryAndGroup
 
 class CRR(nn.Module):
     def __init__(self, nsample, feat_channel, cylinder_radius=0.05, hmin=-0.02, hmax=0.04):
