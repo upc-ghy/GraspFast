@@ -15,8 +15,8 @@ sys.path.append(os.path.join(ROOT_DIR, 'utils'))
 
 import torch.nn.functional as F
 from dsn import DSN,cluster
-from graspnet1 import GraspNet, pred_decode
-from graspnet_dataset import GraspNetDataset, minkowski_collate_fn
+from graspfast import GraspFast, pred_decode
+from graspfast_dataset import GraspFastDataset, minkowski_collate_fn
 from collision_detector import ModelFreeCollisionDetector
 
 parser = argparse.ArgumentParser()
@@ -40,13 +40,13 @@ def my_worker_init_fn(worker_id):
     np.random.seed(np.random.get_state()[1][0] + worker_id)
     pass
 
-TEST_DATASET = GraspNetDataset(cfgs.dataset_path, split='test', camera=cfgs.camera, num_points=cfgs.num_point, voxel_size=cfgs.voxel_size, remove_outlier=True, augment=False, load_label=False)
+TEST_DATASET = GraspFastDataset(cfgs.dataset_path, split='test', camera=cfgs.camera, num_points=cfgs.num_point, voxel_size=cfgs.voxel_size, remove_outlier=True, augment=False, load_label=False)
 
 print(len(TEST_DATASET))
 SCENE_LIST = TEST_DATASET.scene_list()
 TEST_DATALOADER = DataLoader(TEST_DATASET, batch_size=cfgs.batch_size, shuffle=False, num_workers=cfgs.num_workers, worker_init_fn=my_worker_init_fn, collate_fn=minkowski_collate_fn)
 
-net = GraspNet(seed_feat_dim=cfgs.seed_feat_dim, is_training=False)
+net = GraspFast(seed_feat_dim=cfgs.seed_feat_dim, is_training=False)
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 net.to(device)
 
