@@ -2,7 +2,6 @@
 ### GraspFast: Multi-stage Lightweight 6-DoF Grasp Pose Fast Detection with RGB-D Image
 
 
-![GraspFast](https://github.com/upc-ghy/GraspFast/assets/133858812/cc4ba68f-70b2-474b-b29e-30f9fb565988)
 ![pipleline](https://github.com/user-attachments/assets/ae7d9cfd-3ef0-4aa6-9c2a-ae0b655c2047)
 
 
@@ -339,7 +338,7 @@ sh command_simplify_dataset.sh
 ~~~
 
 ## Real Experiments
-![platform](https://github.com/upc-ghy/GraspFast/assets/133858812/e0b68f88-1267-431d-962a-57b3d1faa2f5)
+![platform_new](https://github.com/user-attachments/assets/dff95e8f-b06f-468d-8798-c218d40e616d)
 
 
 ![Robot](https://github.com/upc-ghy/GraspFast/assets/133858812/b0ffb58a-b7c8-47e7-ae41-fb0ab08e83a5)
