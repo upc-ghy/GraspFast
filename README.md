@@ -1,5 +1,3 @@
-#### The code is being organized and the complete version will be uploaded later!
-
 # GraspFast
 ### GraspFast: Multi-stage Lightweight 6-DoF Grasp Pose Fast Detection with RGB-D Image
 
@@ -321,10 +319,22 @@ cd graspnetAPI
 pip install .
 ~~~
 
-### 5. Generation Tolerance Label
+### 4. PointNetTool
+~~~shell
+cd PointNetTool
+python setup.py install
+~~~
+
+### 5. Generation Scenes and Labels
 ~~~shell
 cd DataProcessing
-sh command_generate_tolerance_label.sh
+sh command_generate_scenes.sh
+~~~
+
+### 6. Simplify Dataset
+~~~shell
+cd DataProcessing
+sh command_simplify_dataset.sh
 ~~~
 
 ## Real Experiments
