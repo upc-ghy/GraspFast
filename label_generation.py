@@ -5,7 +5,7 @@ import torch
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 sys.path.append(ROOT_DIR)
-sys.path.append(os.path.join(ROOT_DIR, 'torchKNN'))
+sys.path.append(os.path.join(ROOT_DIR, 'KNN'))
 from knn_modules import myknn
 
 from loss_utils import GRASP_MAX_WIDTH, batch_directionpoint_params_to_matrix, transform_point_cloud, generate_grasp_directions
