@@ -9,9 +9,8 @@ from torch.utils.data import DataLoader
 from graspnetAPI.graspnet_eval import GraspGroup, GraspNetEval
 
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(os.path.join(ROOT_DIR, 'models'))
-sys.path.append(os.path.join(ROOT_DIR, 'dataset'))
-sys.path.append(os.path.join(ROOT_DIR, 'utils'))
+sys.path.append(os.path.join(ROOT_DIR, 'GraspFastModel'))
+sys.path.append(os.path.join(ROOT_DIR, 'DataProcessing'))
 
 import torch.nn.functional as F
 from dsn import DSN,cluster
