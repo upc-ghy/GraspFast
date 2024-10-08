@@ -6,6 +6,6 @@
 #JSUB -o output.%J
 #JSUB -J task1
 
-source /apps/software/anaconda3/bin/activate GraspBalance
+source /apps/software/anaconda3/bin/activate Grasp
 
 python3.7 setup.py install
