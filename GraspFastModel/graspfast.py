@@ -15,7 +15,7 @@ from lgd import LGD
 from wadnet import CRR, WADNet
 from loss_utils import GRASP_MAX_WIDTH, NUM_DIRECTION, NUM_ANGLE, NUM_DEPTH, GRASPNESS_THRESHOLD, M_POINT
 from label_generation import process_grasp_labels, match_grasp_direction_and_label, batch_directionpoint_params_to_matrix
-from pointnet2.pointnet2_utils import furthest_point_sample, gather_operation
+from PointNetTool.pointnet2_utils import furthest_point_sample, gather_operation
 
 class GraspFast(nn.Module):
     def __init__(self, cylinder_radius=0.05, feat_channel=512, is_training=True):
