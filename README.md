@@ -3,6 +3,7 @@
 
 
 ![GraspFast](https://github.com/upc-ghy/GraspFast/assets/133858812/cc4ba68f-70b2-474b-b29e-30f9fb565988)
+![pipleline](https://github.com/user-attachments/assets/ae7d9cfd-3ef0-4aa6-9c2a-ae0b655c2047)
 
 
 ## Algorithm Training Requirements
