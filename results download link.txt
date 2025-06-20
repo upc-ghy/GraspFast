@@ -1,2 +1,4 @@
+The experimental results of our paper have been uploaded to Baidu Cloud. The compressed file contains the grasp pose results predicted by our model for scenes 101~190 from all perspectives. You can download it and verify the results.
+
 link: https://pan.baidu.com/s/1g3Dmk3vtuIDQhrg5-RBR0w?pwd=et7s 
 password: et7s
